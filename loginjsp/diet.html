@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diet - Alzheimer's Care</title>
+        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+        <style>
+              h1{
+                color: rgb(226, 43, 104);
+                font-weight: bolder;
+                text-align: center;
+              }
+              h2{
+                color: rgb(88, 168, 220);
+                font-size: x-large;
+                font-weight: bold;
+              }
+              body{
+                background-image: url("3dmulticolor.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                font-size: large;
+                text-align: justify;
+                position: relative;
+                overflow-x: hidden;
+              }
+
+              .leaf {
+                position: absolute;
+                font-size: 2rem;
+                animation: fall 8s infinite linear;
+                opacity: 0.7;
+                font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+                text-rendering: optimizeLegibility;
+              }
+
+              .leaf:nth-child(1) { left: 5%; animation-delay: 0s; }
+              .leaf:nth-child(2) { left: 15%; animation-delay: 2s; }
+              .leaf:nth-child(3) { left: 25%; animation-delay: 4s; }
+              .leaf:nth-child(4) { left: 35%; animation-delay: 1s; }
+              .leaf:nth-child(5) { left: 65%; animation-delay: 3s; }
+              .leaf:nth-child(6) { left: 75%; animation-delay: 5s; }
+              .leaf:nth-child(7) { left: 85%; animation-delay: 1.5s; }
+              .leaf:nth-child(8) { left: 95%; animation-delay: 3.5s; }
+
+              @keyframes fall {
+                0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+                10% { opacity: 0.7; }
+                90% { opacity: 0.7; }
+                100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+              }
+
+              .navbar a {
+                color: rgb(226, 43, 104);
+              }
+
+              h1 {
+                animation: bounce 2s infinite;
+                text-shadow: 0 2px 4px rgba(226, 43, 104, 0.3);
+              }
+
+              @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-5px); }
+              }
+
+              h2 {
+                animation: slideIn 1s ease-out;
+                transition: all 0.3s ease;
+              }
+
+              h2:hover {
+                text-shadow: 0 2px 8px rgba(88, 168, 220, 0.5);
+              }
+
+              @keyframes slideIn {
+                from { transform: translateX(-30px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+              }
+
+              p {
+                animation: fadeIn 1.5s ease-out;
+                transition: all 0.3s ease;
+              }
+
+              p:hover {
+                background: rgba(255,255,255,0.1);
+                padding: 10px;
+                border-radius: 5px;
+              }
+
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="leaf" data-emoji="🍃">🍃</div>
+        <div class="leaf" data-emoji="🍂">🍂</div>
+        <div class="leaf" data-emoji="🍁">🍁</div>
+        <div class="leaf" data-emoji="🍀">🍀</div>
+        <div class="leaf" data-emoji="🍎">🍎</div>
+        <div class="leaf" data-emoji="🥦">🥦</div>
+        <div class="leaf" data-emoji="🥕">🥕</div>
+        <div class="leaf" data-emoji="🍊">🍊</div>
+        
+        <div class="navbar">
+            <ol><li>
+            <a href="welcom.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="Symptoms.html">Symptoms</a>
+            <a href="diet.html">Diet</a>
+            <a href="Game.html">Game</a></li>
+            <a href="login.jsp">Login</a>
+            </li></ol>
+        </div>
+        
+        <h1>The Role of Diet in Alzheimer's Disease Prevention</h1>
+        <p><h2>Mediterranean Diet for Alzheimer's Prevention:</h2><br> The Mediterranean diet is highly regarded for its potential in preventing Alzheimer's disease.<br>
+            It focuses on fruits, vegetables, whole grains, fish, and healthy fats like olive oil. <br>
+            Research indicates that following this diet may reduce the risk of cognitive decline and Alzheimer's.</p>
+        <P2><h2>Antioxidant-Rich Foods:</h2> <br>Incorporating antioxidant-rich foods such as berries, nuts, and dark leafy greens into your diet is crucial for brain health.<br>
+             These foods help protect the brain from oxidative stress, a key factor in neurodegeneration and Alzheimer's.</P2>
+        <p3><h2>Omega-3 Fatty Acids:</h2><br> Omega-3 fatty acids, found in fatty fish like salmon and mackerel, are known for their anti-inflammatory effects, which support brain health.<br>
+            Regular consumption of omega-3s has been linked to a lower risk of Alzheimer's disease.</p3>
+        <p4><h2> Processed Foods:</h2><br>Processed foods, which are high in trans fats and sugars, can increase inflammation and oxidative stress, harming brain health. 
+            <br>To lower the risk of Alzheimer's, it's important to limit processed foods and focus on whole, nutrient-rich options.</p4>
+    </body>
+</html>

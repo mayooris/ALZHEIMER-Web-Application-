@@ -1,0 +1,207 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6c6f1;
+    background-image: url("whiteviolet.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header {
+    background-color: none;
+    padding: 1rem;
+    text-align: center;
+    font-size: larger;
+}
+
+.navbar a{
+    color: rgb(236, 46, 46);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    color: rgb(145, 71, 10);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: none;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #af21da;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #c329e2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero img {
+    width: 80%;
+    margin-top: 20px;
+}
+ol{
+    display:flex;
+    /*flex-direction: row;*/
+    justify-content: space-between;
+}
+li{
+    list-style-type: none;
+    padding: 20px;
+}
+.a{
+        margin-left: 400px;
+        padding-right: 1px;
+    }
+/* About Us Section */
+.about-us {
+    text-align: center;
+    margin-top: 50px;
+    color: #141413;
+}
+
+.about-us img {
+    width: 60%;
+    margin-top: 20px;
+}
+
+/* Form Styles */
+.login-form, .signin-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f36a6a;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.login-form h2, .signin-form h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #f39595;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #28a745;
+    color: rgb(233, 70, 70);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+.container {
+    background: rgb(141, 51, 153);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+.question {
+    font-size: 20px;
+    margin: 10px 0;
+}
+input {
+    font-size: 18px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+}
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background: #28a745;
+    color: rgb(221, 24, 24);
+    border-radius: 5px;
+}
+.result {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.waving-emoji {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    animation: wave 2s infinite;
+    cursor: default;
+  }
+
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .floating-hearts {
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgba(236, 46, 46, 0.6);
+    animation: heartFloat 6s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  .floating-hearts:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .floating-hearts:nth-child(2) { left: 30%; animation-delay: 2s; }
+  .floating-hearts:nth-child(3) { left: 50%; animation-delay: 4s; }
+  .floating-hearts:nth-child(4) { left: 70%; animation-delay: 1s; }
+  .floating-hearts:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+  @keyframes heartFloat {
+    0%, 100% { transform: translateY(100vh); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-100px); opacity: 0; }
+  }
+
+
+
+  .hero h1 {
+    text-shadow: 0 0 15px rgba(175, 33, 218, 0.6);
+  }

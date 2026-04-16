@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background-image: url(3dmulticolor.jpg);
+      background-repeat: no-repeat;
+      background-size: 150%;
+      padding: 30px;
+      text-align: center;
+      color: rgb(233, 248, 24);
+      position: relative;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    form {
+      width: 400px;
+      margin: auto;
+      padding: 20px;
+      background: transparent;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
+      animation: glow 3s infinite alternate;
+    }
+    table {
+      width: 100%;
+    }
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <ol><li>
+    <a href="welcom.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="Symptoms.html">Symptoms</a>
+    <a href="diet.html">Diet</a>
+    <a href="Game.html">Game</a></li>
+    <a href="login.jsp">Login</a>
+    </li></ol>
+  </div>
+
+  <h2>User Form</h2>
+  <p id="welcomeText"></p>
+
+  <form id="userForm">
+    <table>
+      <tr>
+        <td>Full Name:</td>
+        <td><input type="text" name="fullname" /></td>
+      </tr>
+      <tr>
+        <td>Father name:</td>
+        <td><input type="name" name="halfname" placeholder="enter your name"/></td>
+    </tr>
+    <tr>
+        <td>Mother name:</td>
+        <td><input type="name" name="nam" placeholder="enter your name"/></td>
+    </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email" /></td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td><input type="tel" name="phone" /></td>
+      </tr>
+      <tr>
+        <td>Siblings:</td>
+      <td><input type="radio" name="cal">Older
+      <input type="radio" name="cal">Younger</td>
+    <tr>
+        <td>Sibling name:</td><td><input type="text" name="s"></td> 
+    </tr>
+    <tr>
+        <td>Pet Name:</td>
+       <td><input type="text" name="pet"></td>
+    </tr>
+    <tr>
+        <td>Height:</td>
+    <td><input type="number" name="inch"></td>
+    </tr>
+    <tr>
+    <td>GrandFather:</td>
+    <td><input type="text" name="savr"></td>
+    </tr>
+    <tr>
+    <td>GrandMother:</td>
+    <td><input type="text" name="sav"></td>
+    </tr>
+    <tr>
+        <td>DOB:</td>
+        <td><input type="date" name="kal" placeholder="enter data of birth"></td>
+    </tr>
+    <tr>
+        <td>Additional info:</td>
+        <td><textarea name="val"></textarea></td>
+    </tr>
+    <tr>
+        <td>Hobbies :</td>
+        <td><input type="text"></td>
+    </tr>
+    </table>
+    <button type="submit">Save</button>
+    <button type="button" onclick="signOut()">Sign Out</button>
+  </form>
+
+  <script>
+    const username = localStorage.getItem('loggedInUser');
+    const formKey = `form_${username}`;
+    const form = document.getElementById('userForm');
+
+    if (!username) {
+      alert("You must sign in first.");
+      window.location.href = "login.jsp";
+    } else {
+      document.getElementById('welcomeText').innerText = `Welcome, ${username}!`;
+    }
+
+    const savedData = JSON.parse(localStorage.getItem(formKey));
+    for (let i = 0; i < form.elements.length; i++) {
+      const el = form.elements[i];
+      if (el.name) el.value = "";
+    }
+    if (savedData) {
+      for (const [key, value] of Object.entries(savedData)) {
+        const field = form.elements.namedItem(key);
+        if (field) field.value = value;
+      }
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = {};
+      for (let i = 0; i < form.elements.length; i++) {
+        const el = form.elements[i];
+        if (el.name) data[el.name] = el.value;
+      }
+      localStorage.setItem(formKey, JSON.stringify(data));
+      alert("Form saved for " + username);
+    });
+
+    function signOut() {
+      localStorage.removeItem('loggedInUser');
+      window.location.href = "logout";
+    }
+  </script>
+
+</body>
+</html>

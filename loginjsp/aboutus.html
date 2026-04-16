@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        .floating-hearts {
+            animation: heartFloat 6s infinite ease-in-out !important;
+        }
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(100vh); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        .about-us h1, .about-us p {
+            transform: none !important;
+        }
+        * {
+            transform-origin: center !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts">💜</div>
+    <div class="floating-hearts">❤️</div>
+    <div class="floating-hearts">💙</div>
+    <div class="floating-hearts">💚</div>
+    <div class="floating-hearts">💛</div>
+
+    <header>
+        <div class="navbar">
+            <ol><li>
+            <a href="welcom.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="Symptoms.html">Symptoms</a>
+            <a href="diet.html">Diet</a>
+            <a href="Game.html">Game</a></li>
+            <a href="login.jsp">Login</a>
+            </li></ol>
+        </div>
+    </header>
+    <main>
+        <section class="about-us">
+            <h1>About Us</h1>
+            <p>We are a group of passionate individuals dedicated to promoting support to Alzheimer disease. 
+            <br>Our mission is to inspire individuals and organizations to 
+                 <br> take positive action toward a HAPPY future.</p>
+        </section>
+    </main>
+    <footer>"COLLECT BEAUTIFUL MOMENTS AND LET THEM TELL THE STROY OF YOUR LIFE"</footer>
+</body>
+</html>

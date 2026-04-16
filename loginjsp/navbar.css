@@ -1,0 +1,40 @@
+/* Standard Navigation Bar for all pages */
+.navbar {
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar ol {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.navbar a {
+    color: #ec2e2e;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    text-shadow: 0 0 10px #ec2e2e;
+    text-decoration: underline;
+}
+
+.navbar .a {
+    margin-left: auto;
+}

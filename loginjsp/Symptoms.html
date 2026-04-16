@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms - Alzheimer's Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+   <style>
+header {
+    background: linear-gradient(45deg, rgb(38, 172, 38), rgb(50, 200, 50));
+    padding: 1rem;
+    text-align: center;
+    font-size: xx-large;
+    animation: headerPulse 3s infinite alternate;
+    box-shadow: 0 4px 15px rgba(38, 172, 38, 0.3);
+}
+
+@keyframes headerPulse {
+    from { box-shadow: 0 4px 15px rgba(38, 172, 38, 0.3); }
+    to { box-shadow: 0 8px 25px rgba(38, 172, 38, 0.6); }
+}
+
+.floating-medical {
+    position: absolute;
+    font-size: 2rem;
+    animation: medicalFloat 8s infinite ease-in-out;
+    opacity: 0.6;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.floating-medical:nth-child(1) { left: 5%; animation-delay: 0s; }
+.floating-medical:nth-child(2) { left: 15%; animation-delay: 2s; }
+.floating-medical:nth-child(3) { left: 85%; animation-delay: 4s; }
+.floating-medical:nth-child(4) { left: 95%; animation-delay: 1s; }
+
+@keyframes medicalFloat {
+    0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(-100px) rotate(180deg); opacity: 0; }
+}
+
+    h1{
+    color: #181617;
+    animation: titleBounce 2s infinite;
+    }
+
+@keyframes titleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+   .sy{
+    color: #131213;
+    font-weight: bolder;
+    font-size: x-large;
+    position: relative;
+    z-index: 10;
+   } 
+
+   .sy ul {
+    animation: listSlide 1s ease-out;
+   }
+
+   @keyframes listSlide {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+   }
+
+   .sy li {
+    transition: all 0.3s ease;
+    padding: 5px;
+   }
+
+   .sy li:hover {
+    color: #2a5aa0;
+    text-shadow: 0 1px 3px rgba(42, 90, 160, 0.3);
+   }
+
+   body{
+    background-image: url(whiteviolet.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="floating-medical" data-emoji="🩺">🩺</div>
+    <div class="floating-medical" data-emoji="💊">💊</div>
+    <div class="floating-medical" data-emoji="⚕️">⚕️</div>
+    <div class="floating-medical" data-emoji="🩺">🩺</div>
+
+    <div class="navbar">
+        <ol><li>
+        <a href="welcom.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="Symptoms.html">Symptoms</a>
+        <a href="diet.html">Diet</a>
+        <a href="Game.html">Game</a></li>
+        <a href="login.jsp">Login</a>
+        </li></ol>
+    </div>
+    <header><caption>SYMPTOMS</caption></header>
+    <div class="sy"><h1>A. Early symptoms</h1>
+        <ul>
+            <li>Memory loss affecting daily life(forgetting names,etc)</li>
+            <li>Difficulty planning or solving problems.
+            </li>
+            <li>Trouble completing familiar tass.</li>
+            <li>Confusion with time and place.</li>
+            <li>Misplacing things and struggling to retrace steps.</li>
+            <li>Changes in mood and personality(depression,anxiety).</li>
+        </ul>
+        <h1>B. Middle-stage symptoms</h1>
+        <ul>
+            <li>Increased memory loss and confusion.</li>
+            <li>Difficulty recognizing friends and family.</li>
+            <li>Repetitive speech and difficulty communicating.</li>
+            <li>Wandering and getting lost.</li>
+            <li>Sleep disturbances.</li>
+        </ul>
+    <h1>C.Late-stage symptoms</h1>
+    <ul>
+        <li>Severe memory loss and inability to recognize loved ones.</li>
+        <li>Loss of ability to communicate.</li>
+        <li>Difficulty swallowing and mobility issues.</li>
+        <li>Need for full-time assistance with daily activities.</li>
+    </ul></div>
+</body>
+</html>

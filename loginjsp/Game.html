@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        .game-particles {
+            position: absolute;
+            font-size: 2rem;
+            animation: gameFloat 6s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        .game-particles:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .game-particles:nth-child(2) { left: 25%; animation-delay: 1.5s; }
+        .game-particles:nth-child(3) { left: 75%; animation-delay: 3s; }
+        .game-particles:nth-child(4) { left: 85%; animation-delay: 0.5s; }
+        .game-particles:nth-child(5) { left: 95%; animation-delay: 2s; }
+
+        @keyframes gameFloat {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            animation: containerGlow 3s infinite alternate;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes containerGlow {
+            from { box-shadow: 0px 0px 10px rgba(141, 51, 153, 0.5); }
+            to { box-shadow: 0px 0px 20px rgba(141, 51, 153, 0.8); }
+        }
+
+        .question {
+            animation: questionPop 0.5s ease-out;
+        }
+
+        @keyframes questionPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        input[type="number"] {
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            background: rgba(255,255,255,0.9);
+            outline: 2px solid rgba(141, 51, 153, 0.5);
+        }
+
+        button {
+            animation: buttonGlow 2s infinite alternate;
+        }
+
+        @keyframes buttonGlow {
+            from { box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3); }
+            to { box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6); }
+        }
+
+        .result {
+            animation: resultSlide 0.5s ease-out;
+        }
+
+        @keyframes resultSlide {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-particles">🎲</div>
+    <div class="game-particles">🧠</div>
+    <div class="game-particles">✨</div>
+    <div class="game-particles">🎆</div>
+    <div class="game-particles">🎯</div>
+
+    <div class="navbar">
+        <ol><li>
+        <a href="welcom.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="Symptoms.html">Symptoms</a>
+        <a href="diet.html">Diet</a>
+        <a href="Game.html">Game</a></li>
+        <a href="login.jsp">Login</a>
+        </li></ol>
+    </div>
+
+    <div class="container">
+        <h2>Simple Math Game</h2>
+        
+        <div class="question" id="question1"></div>
+        <input type="number" id="answer1">
+        
+        <div class="question" id="question2"></div>
+        <input type="number" id="answer2">
+
+        <br>
+        <button onclick="checkAnswers()">Check Answers</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let num1 = Math.floor(Math.random() * 10) + 1;
+        let num2 = Math.floor(Math.random() * 10) + 1;
+        let num3 = Math.floor(Math.random() * 10) + 1;
+        let num4 = Math.floor(Math.random() * 10) + 1;
+
+        let operations = ['+', '-', '*', '/'];
+        let op1 = operations[Math.floor(Math.random() * operations.length)];
+        let op2 = operations[Math.floor(Math.random() * operations.length)];
+
+        let correctAnswer1 = eval(num1 + op1 + num2).toFixed(2);
+        let correctAnswer2 = eval(num3 + op2 + num4).toFixed(2);
+
+        document.getElementById("question1").innerText = `Q1: ${num1} ${op1} ${num2} = ?`;
+        document.getElementById("question2").innerText = `Q2: ${num3} ${op2} ${num4} = ?`;
+
+        function checkAnswers() {
+            let userAnswer1 = parseFloat(document.getElementById("answer1").value);
+            let userAnswer2 = parseFloat(document.getElementById("answer2").value);
+            let resultText = "";
+
+            if (userAnswer1 == correctAnswer1) {
+                resultText += "✅ Q1 is Correct! ";
+            } else {
+                resultText += `❌ Q1 is Wrong! (Correct: ${correctAnswer1}) `;
+            }
+
+            if (userAnswer2 == correctAnswer2) {
+                resultText += "✅ Q2 is Correct!";
+            } else {
+                resultText += `❌ Q2 is Wrong! (Correct: ${correctAnswer2})`;
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
